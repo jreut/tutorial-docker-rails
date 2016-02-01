@@ -1,10 +1,9 @@
 To run this program:
 
-1. `docker build -t plain-ruby-file /`
-2. `docker run plain-ruby-file`
+1. `docker build -t basic-rails-app /`
+2. `docker run -P -d --name rails basic-rails-app
 
-You should see:
+Get the URL with
 
-"Hello, world!"
+http://$(docker-machine ip default):$(docker port rails | cut -f2 -d:)
 
-As your output.
